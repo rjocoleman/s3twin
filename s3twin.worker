@@ -1,0 +1,4 @@
+#runtime 'ruby'
+exec 's3twin.rb'
+gemfile 'Gemfile'
+remote
