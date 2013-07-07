@@ -14,16 +14,22 @@ Please note; while this works it's the first release so the API may change drast
 
 ## Installation
 
-`$ gem install s3twin`
+```shell
+$ gem install s3twin
+```
 
 ## Usage
 
-`$ s3twin help`
+```shell
+$ s3twin help
 
-`$ s3twin go`
+$ s3twin go
+```
 
 Example with payload:
-`$ s3twin go --payload=source_bucket:bar source_access_key:foo source_secret_key:world destination_bucket:bar destination_access_key:foo destination_secret_key:world`
+```shell
+$ s3twin go --payload=source_bucket:bar source_access_key:foo source_secret_key:world destination_bucket:bar destination_access_key:foo destination_secret_key:world`
+```
 
 The payload can be set via an argument `--payload=key:value key2:value2` or `.env` file, if neither of those are present the user will be prompted for input.
 
@@ -35,9 +41,11 @@ Currently only [iron.io] IronWorker tasks (including scheduled) are supported.
 
 Create a new project at [https://hud.iron.io](https://hud.iron.io), collect your Iron Token and Project ID.
 
-`$ s3twin ironworker upload`
-`$ s3twin ironworker go` 
-`$ s3twin ironworker schedule --time `
+```shell
+$ s3twin ironworker upload
+$ s3twin ironworker go
+$ s3twin ironworker schedule --time
+```
 
 Optionally create, or append, your `.env` file:
 
