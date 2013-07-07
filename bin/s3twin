@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require 'thor'
+require 'dotenv'
+Dotenv.load
+
+$:.push File.expand_path('../../lib', __FILE__)
+require 's3twin'
+
+module S3twin
+  class S3twinCLI < Thor
+    include Thor::Actions
+    class_option :payload, :type => :hash, :default => { 
+      'source_bucket' => ENV['SOURCE_S3_BUCKET'],
+      'source_access_key' => ENV['SOURCE_AWS_ACCESS_KEY_ID'],
+      'source_secret_key' => ENV['SOURCE_AWS_SECRET_ACCESS_KEY'],
+      'destination_bucket' => ENV['DESTINATION_S3_BUCKET'],
+      'destination_access_key' => ENV['DESTINATION_AWS_ACCESS_KEY_ID'],
+      'destination_secret_key' => ENV['DESTINATION_AWS_SECRET_ACCESS_KEY'] 
+    }
+
+    desc 'go', 'Make a twin of a S3 Bucket'
+    def go
+      Twin.go(S3twin::Helpers.prompt_payload(options['payload']))
+    end
+    # worker sub-commands live in ../lib/s3twin/workers    
+  end
+  S3twinCLI.start
+end
