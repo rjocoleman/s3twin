@@ -15,7 +15,7 @@ module S3twin
       code.runtime = 'ruby'
       code.name = options['name']
       code.full_remote_build = true
-      code.merge_exec('lib/s3twin/twin.rb','Twin')
+      code.merge_exec(File.expand_path('../../twin.rb', __FILE__),'Twin')
       code.merge_gem 'aws-sdk'
       client.codes.create(code)
     end
