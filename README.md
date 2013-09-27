@@ -37,7 +37,7 @@ If neither of those are present the user will be prompted for input.
 
 _Example with payload:_
 ```bash
-$ s3twin go --payload=source_bucket:bar source_access_key:foo source_secret_key:world destination_bucket:bar destination_access_key:foo destination_secret_key:world
+$ s3twin go --payload=source_s3_bucket:bar source_aws_access_key_id:foo source_aws_secret_access_key:world destination_s3_bucket:bar destination_aws_access_key_id:foo destination_aws_secret_access_key:world
 ```
 
 
@@ -53,6 +53,8 @@ Create a new project at [https://hud.iron.io](https://hud.iron.io/), collect you
 `$ s3twin ironworker upload # upload worker code`  
 `$ s3twin ironworker go # run worker once now`  
 `$ s3twin ironworker schedule --time # schedule worker for the future`  
+
+Configure `--payload=iron_token:foo iron_project_id:bar`
 
 Optionally create, or append, your `.env` file:
 
