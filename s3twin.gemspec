@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'thor', '~> 0.18'
-  spec.add_dependency 'dotenv', '~> 0.8'
-  spec.add_dependency 'aws-sdk', '~> 1.11'
-  spec.add_dependency 'iron_worker_ng', '~> 0.16'
+  spec.add_dependency 'dotenv', '~> 0.9'
+  spec.add_dependency 'aws-sdk', '~> 1.19'
+  spec.add_dependency 'iron_worker_ng', '~> 1.0'
   
   spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'

@@ -1,5 +1,5 @@
 module S3twin
-  VERSION = '0.0.3'
+  VERSION = '0.0.5'
 end
 
 require 's3twin/twin'

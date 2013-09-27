@@ -30,6 +30,7 @@ class Twin
       @destination_bucket = @destination.buckets[params['destination_s3_bucket']]
 
       @source_bucket.objects.each do |obj|
+        dest_key = @destination_bucket.objects[obj.key] 
         begin
           unless dest_key.exists?
             puts "Creating: #{obj.key}"
